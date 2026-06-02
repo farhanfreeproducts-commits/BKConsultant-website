@@ -63,9 +63,9 @@
             <li><a href="#contact">Contact</a></li>
         </ul>
         <div class="mobile-nav-footer">
-            <a href="BK_CONSULTANT_LLC_Registration.pdf" target="_blank" class="btn btn-document">
-                <i class="fas fa-file-pdf"></i> Registration Doc
-            </a>
+            <button onclick="openPdfModal()" class="btn btn-document">
+                <i class="fas fa-file-pdf"></i> Company Registration Document
+            </button>
         </div>
     </div>
 
@@ -81,9 +81,9 @@
                 <div class="hero-actions">
                     <a href="#contact" class="btn btn-primary">Contact Us</a>
                     <a href="#about" class="btn btn-secondary">Learn More</a>
-                    <a href="BK_CONSULTANT_LLC_Registration.pdf" target="_blank" class="btn btn-document">
+                    <button onclick="openPdfModal()" class="btn btn-document">
                         <i class="fas fa-file-pdf"></i> Company Registration Document
-                    </a>
+                    </button>
                 </div>
             </div>
         </div>
@@ -345,7 +345,7 @@
                             <div class="icon-circle"><i class="fas fa-envelope"></i></div>
                             <div>
                                 <h5>Email Address</h5>
-                                <p><a href="mailto:admin@bkconsultant.com">admin@bkconsultant.com</a></p>
+                                <p><a href="mailto:admin@bkconsultantllc.com">admin@bkconsultantllc.com</a></p>
                             </div>
                         </div>
                         <div class="contact-info-item">
@@ -359,7 +359,7 @@
                 </div>
                 
                 <div class="contact-form-container fade-in">
-                    <form action="https://formsubmit.co/admin@bkconsultant.com" method="POST" id="contactForm" class="modern-form">
+                    <form action="https://formsubmit.co/admin@bkconsultantllc.com" method="POST" id="contactForm" class="modern-form">
                         <!-- Formsubmit honeypot and disable captcha -->
                         <input type="text" name="_honey" style="display:none">
                         <input type="hidden" name="_captcha" value="false">
@@ -416,9 +416,9 @@
                 <div class="footer-contact">
                     <h4>Contact Us</h4>
                     <p><i class="fas fa-phone"></i> +1 (929) 744-5653</p>
-                    <p><i class="fas fa-envelope"></i> <a href="mailto:admin@bkconsultant.com" class="text-white hover-accent">admin@bkconsultant.com</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:admin@bkconsultantllc.com" class="text-white hover-accent">admin@bkconsultantllc.com</a></p>
                     <p><i class="fas fa-map-marker-alt"></i> 30 N GOULD ST, STE 4000, SHERIDAN, WY 82801</p>
-                    <p><i class="fas fa-file-pdf"></i> <a href="BK_CONSULTANT_LLC_Registration.pdf" target="_blank" class="text-white hover-accent">Company Document</a></p>
+                    <p><i class="fas fa-file-pdf"></i> <a href="#" onclick="openPdfModal(); return false;" class="text-white hover-accent">Company Registration Document</a></p>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -441,6 +441,28 @@
             <div class="lightbox-caption" id="lightbox-caption"></div>
         </div>
         <span class="lightbox-arrow lightbox-next" id="lightbox-next">&#10095;</span>
+    </div>
+
+    <!-- PDF Viewer Modal -->
+    <div id="pdfModal" class="pdf-modal" aria-hidden="true" role="dialog">
+        <div class="pdf-modal-overlay" onclick="closePdfModal()"></div>
+        <div class="pdf-modal-content">
+            <div class="pdf-modal-header">
+                <h3><i class="fas fa-file-pdf"></i> Company Registration Document</h3>
+                <button class="pdf-modal-close" onclick="closePdfModal()" aria-label="Close">&times;</button>
+            </div>
+            <div class="pdf-modal-body">
+                <div class="pdf-toolbar">
+                    <span class="pdf-page-info"><i class="fas fa-info-circle"></i> Company Registration Document &mdash; Scroll to view all pages</span>
+                    <div class="pdf-download-links">
+                        <a href="documents/BK CONSULTANT LLC.pdf" download class="pdf-download-btn"><i class="fas fa-download"></i> Download PDF</a>
+                    </div>
+                </div>
+                <div class="pdf-canvas-container">
+                    <iframe src="documents/BK CONSULTANT LLC.pdf" title="Company Registration Document"></iframe>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Custom JS -->

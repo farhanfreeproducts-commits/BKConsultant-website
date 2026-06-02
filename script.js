@@ -238,3 +238,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+// PDF Modal
+function openPdfModal() {
+    const modal = document.getElementById('pdfModal');
+    if (!modal) return;
+    modal.classList.add('active');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+}
+
+function closePdfModal() {
+    const modal = document.getElementById('pdfModal');
+    if (!modal) return;
+    modal.classList.remove('active');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+}
+
+// Close PDF modal on Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closePdfModal();
+});
